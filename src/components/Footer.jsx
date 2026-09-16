@@ -7,7 +7,7 @@ const socials = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/rahulpareekdev/", Icon: FaLinkedinIn },
 ];
 
-export default function Footer() {
+export default function Footer({ onNavigate }) {
   return (
     <footer className="py-10">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 sm:flex-row sm:justify-between">
@@ -27,12 +27,42 @@ export default function Footer() {
         </div>
 
         <div className="glass flex flex-col items-center gap-3 rounded-3xl px-5 py-4 sm:items-end">
-          <nav className="flex gap-5 text-sm font-medium text-white/85">
-            <a href="#projects" className="transition-colors hover:text-white">
+          <nav className="flex flex-wrap justify-center gap-5 text-sm font-medium text-white/85 sm:justify-end">
+            <a
+              href="#projects"
+              onClick={(e) => {
+                if (onNavigate) {
+                  e.preventDefault();
+                  onNavigate("home", "#projects");
+                }
+              }}
+              className="transition-colors hover:text-white"
+            >
               Projects
             </a>
-            <a href="#blog" className="transition-colors hover:text-white">
-              Blog
+            <a
+              href="#services"
+              onClick={(e) => {
+                if (onNavigate) {
+                  e.preventDefault();
+                  onNavigate("home", "#services");
+                }
+              }}
+              className="transition-colors hover:text-white"
+            >
+              Services
+            </a>
+            <a
+              href="#/blogs"
+              onClick={(e) => {
+                if (onNavigate) {
+                  e.preventDefault();
+                  onNavigate("blogs");
+                }
+              }}
+              className="transition-colors hover:text-white"
+            >
+              Blogs
             </a>
           </nav>
           <a
