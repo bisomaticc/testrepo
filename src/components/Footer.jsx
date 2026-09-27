@@ -1,10 +1,10 @@
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const socials = [
-  { label: "Facebook", href: "https://www.facebook.com/", Icon: FaFacebookF },
-  { label: "Instagram", href: "https://www.instagram.com/", Icon: FaInstagram },
-  { label: "Twitter", href: "http://twitter.com/", Icon: FaTwitter },
+  { label: "GitHub", href: "https://github.com/bisomaticc", Icon: FaGithub },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/rahulpareekdev/", Icon: FaLinkedinIn },
+  { label: "Twitter", href: "https://twitter.com/", Icon: FaTwitter },
+  { label: "Instagram", href: "https://www.instagram.com/", Icon: FaInstagram },
 ];
 
 export default function Footer({ onNavigate }) {

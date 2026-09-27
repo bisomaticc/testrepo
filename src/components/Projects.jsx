@@ -42,6 +42,18 @@ export default function Projects() {
             </a>
           ))}
         </div>
+
+        <div className="mt-8 flex justify-center sm:justify-start">
+          <a
+            href="https://github.com/bisomaticc"
+            target="_blank"
+            rel="noreferrer"
+            className="glass inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs sm:text-sm font-semibold text-white transition-all hover:scale-105 hover:border-white/50"
+          >
+            <span>See more projects on GitHub</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </div>
     </section>
   );

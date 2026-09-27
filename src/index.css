@@ -12,13 +12,21 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
 body {
   margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-width: 100vw;
   background: var(--ghibli-deep);
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .font-cursive {
@@ -39,4 +47,58 @@ body {
   -webkit-backdrop-filter: blur(26px);
   border: 1px solid rgba(255, 255, 255, 0.28);
   box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.6);
+}
+
+/* Hide scrollbar utility for clean mobile nav */
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Responsive Ghibli Scenic Background Framing */
+.ghibli-scenic-bg {
+  background-image: url(/images/ghibli-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Default desktop widescreen: easel & umbrella framed on the left, sky on right */
+  background-position: 25% 45%;
+  transition: background-position 0.3s ease-out;
+}
+
+/* Laptop and standard desktop */
+@media (min-width: 1024px) and (max-aspect-ratio: 16/9) {
+  .ghibli-scenic-bg {
+    background-position: 24% 45%;
+  }
+}
+
+/* Tablets and medium screens (portrait and square viewports) */
+@media (max-width: 1024px) {
+  .ghibli-scenic-bg {
+    background-position: 22% 40%;
+  }
+}
+
+/* Mobile phones and narrow screens */
+@media (max-width: 640px) {
+  .ghibli-scenic-bg {
+    background-position: 28% 42%;
+  }
+}
+
+/* Very tall portrait phones (e.g. 9:19.5, 9:20 ratios like modern iPhones/Galaxies) */
+@media (max-aspect-ratio: 1/2) {
+  .ghibli-scenic-bg {
+    background-position: 28% 40%;
+  }
+}
+
+/* Ultrawide monitors (21:9 and wider) */
+@media (min-aspect-ratio: 2/1) {
+  .ghibli-scenic-bg {
+    background-position: 26% 38%;
+  }
 }

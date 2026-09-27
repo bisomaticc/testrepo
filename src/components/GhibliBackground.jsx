@@ -148,13 +148,15 @@ export default function GhibliBackground({ className = "" }) {
   // Interactive mouse tracking
   useEffect(() => {
     function handlePointerMove(e) {
+      // Avoid parallax shift on mobile to prevent any edge clipping
+      if (window.innerWidth < 640) return;
       const { innerWidth: w, innerHeight: h } = window;
       const nx = e.clientX / w - 0.5;
       const ny = e.clientY / h - 0.5;
 
       // Subtle 3D parallax shift of the forest scene
-      parallaxRef.current.targetX = -nx * 18;
-      parallaxRef.current.targetY = -ny * 12;
+      parallaxRef.current.targetX = -nx * 14;
+      parallaxRef.current.targetY = -ny * 10;
 
       // Cursor wind velocity for leaf physics
       const mw = mouseWindRef.current;
@@ -274,13 +276,7 @@ export default function GhibliBackground({ className = "" }) {
       {/* Parallax Container with "The Wind Rises" forest easel background */}
       <div
         ref={containerRef}
-        className="absolute inset-0 transition-transform duration-300 ease-out will-change-transform"
-        style={{
-          backgroundImage: `url(/images/ghibli-bg.jpg)`,
-          backgroundPosition: "center center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
+        className="ghibli-scenic-bg absolute inset-0 transition-transform duration-300 ease-out will-change-transform"
       >
         {/* Gentle ambient watercolor lighting vignette */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-[#05140d]/65" />
