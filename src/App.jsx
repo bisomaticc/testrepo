@@ -7,7 +7,7 @@ import Services from "./components/Services";
 import { BlogPage, posts } from "./components/Blog";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
-import LiquidBackground from "./components/LiquidBackground";
+import GhibliBackground from "./components/GhibliBackground";
 
 function parseRoute() {
   const hash = window.location.hash || "";
@@ -80,8 +80,8 @@ export default function App() {
   }, [route]);
 
   return (
-    <div className="relative min-h-screen bg-[#021208]">
-      <LiquidBackground className="pointer-events-none fixed inset-0 z-0" />
+    <div className="relative min-h-screen bg-[#05140d] text-white">
+      <GhibliBackground className="fixed inset-0 z-0" />
       <div className="relative z-10 flex min-h-screen flex-col justify-between">
         <Navbar currentRoute={route} onNavigate={navigate} />
 
